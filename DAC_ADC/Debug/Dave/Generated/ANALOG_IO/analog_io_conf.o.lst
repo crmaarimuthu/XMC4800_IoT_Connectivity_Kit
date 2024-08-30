@@ -1,0 +1,79 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "analog_io_conf.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .bss.ANALOG_IO_0_state,"aw",%nobits
+  22              	ANALOG_IO_0_state:
+  23 0000 00       	 .space 1
+  24              	 .global ANALOG_IO_0
+  25              	 .section .rodata.ANALOG_IO_0,"a",%progbits
+  26              	 .align 2
+  29              	ANALOG_IO_0:
+  30 0000 00000000 	 .word 0
+  31 0004 00000000 	 .word ANALOG_IO_0_state
+  32 0008 008E0248 	 .word 1208126976
+  33 000c 00       	 .byte 0
+  34 000d 000000   	 .space 3
+  35              	 .section .bss.ANALOG_IO_1_state,"aw",%nobits
+  38              	ANALOG_IO_1_state:
+  39 0000 00       	 .space 1
+  40              	 .global ANALOG_IO_1
+  41              	 .section .rodata.ANALOG_IO_1,"a",%progbits
+  42              	 .align 2
+  45              	ANALOG_IO_1:
+  46 0000 00000000 	 .word 0
+  47 0004 00000000 	 .word ANALOG_IO_1_state
+  48 0008 008E0248 	 .word 1208126976
+  49 000c 01       	 .byte 1
+  50 000d 000000   	 .space 3
+  51              	 .section .bss.ANALOG_IO_2_state,"aw",%nobits
+  54              	ANALOG_IO_2_state:
+  55 0000 00       	 .space 1
+  56              	 .global ANALOG_IO_2
+  57              	 .section .rodata.ANALOG_IO_2,"a",%progbits
+  58              	 .align 2
+  61              	ANALOG_IO_2:
+  62 0000 00000000 	 .word 0
+  63 0004 00000000 	 .word ANALOG_IO_2_state
+  64 0008 008E0248 	 .word 1208126976
+  65 000c 09       	 .byte 9
+  66 000d 000000   	 .space 3
+  67              	 .text
+  68              	.Letext0:
+  69              	 .file 1 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+  70              	 .file 2 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+  71              	 .file 3 "C:/work_mari/XMC4800/DAC_ADC/Libraries/XMCLib/inc/xmc4_gpio.h"
+  72              	 .file 4 "../Dave/Generated/ANALOG_IO/analog_io.h"
+  73              	 .file 5 "../Dave/Generated/ANALOG_IO/analog_io_conf.c"
+  74              	 .file 6 "C:/work_mari/XMC4800/DAC_ADC/Libraries/CMSIS/Include/cmsis_gcc.h"
+  75              	 .file 7 "C:/work_mari/XMC4800/DAC_ADC/Libraries/CMSIS/Include/core_cm4.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 analog_io_conf.c
+    {standard input}:22     .bss.ANALOG_IO_0_state:00000000 ANALOG_IO_0_state
+    {standard input}:23     .bss.ANALOG_IO_0_state:00000000 $d
+    {standard input}:29     .rodata.ANALOG_IO_0:00000000 ANALOG_IO_0
+    {standard input}:26     .rodata.ANALOG_IO_0:00000000 $d
+    {standard input}:38     .bss.ANALOG_IO_1_state:00000000 ANALOG_IO_1_state
+    {standard input}:39     .bss.ANALOG_IO_1_state:00000000 $d
+    {standard input}:45     .rodata.ANALOG_IO_1:00000000 ANALOG_IO_1
+    {standard input}:42     .rodata.ANALOG_IO_1:00000000 $d
+    {standard input}:54     .bss.ANALOG_IO_2_state:00000000 ANALOG_IO_2_state
+    {standard input}:55     .bss.ANALOG_IO_2_state:00000000 $d
+    {standard input}:61     .rodata.ANALOG_IO_2:00000000 ANALOG_IO_2
+    {standard input}:58     .rodata.ANALOG_IO_2:00000000 $d
+
+NO UNDEFINED SYMBOLS

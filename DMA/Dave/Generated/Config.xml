@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project MotherSystem_Version="" Name="DMA" Path="C:\work_mari\XMC4800\common-tasks\DMA">
+    <COMPILER>
+        <Name>ARM_GCC_HOME</Name>
+        <Version/>
+        <Memory_Model/>
+    </COMPILER>
+    <DEVICE>
+        <Sales_Code>XMC4800-F100x2048</Sales_Code>
+        <Description/>
+    </DEVICE>
+    <Generated_Files>
+        <Source_Files>
+            <Source_File>
+                <File_Name>cpu_ctrl_xmc4.c</File_Name>
+                <Path>\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4.c</Path>
+                <Type>C File</Type>
+            </Source_File>
+            <Source_File>
+                <File_Name>cpu_ctrl_xmc4_conf.c</File_Name>
+                <Path>\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_conf.c</Path>
+                <Type>C File</Type>
+            </Source_File>
+            <Source_File>
+                <File_Name>DAVE.c</File_Name>
+                <Path>\Dave\Generated\DAVE.c</Path>
+                <Type>C File</Type>
+            </Source_File>
+            <Source_File>
+                <File_Name>dma_ch.c</File_Name>
+                <Path>\Dave\Generated\DMA_CH\dma_ch.c</Path>
+                <Type>C File</Type>
+            </Source_File>
+            <Source_File>
+                <File_Name>dma_ch_conf.c</File_Name>
+                <Path>\Dave\Generated\DMA_CH\dma_ch_conf.c</Path>
+                <Type>C File</Type>
+            </Source_File>
+            <Source_File>
+                <File_Name>global_dma.c</File_Name>
+                <Path>\Dave\Generated\GLOBAL_DMA\global_dma.c</Path>
+                <Type>C File</Type>
+            </Source_File>
+            <Source_File>
+                <File_Name>global_dma_conf.c</File_Name>
+                <Path>\Dave\Generated\GLOBAL_DMA\global_dma_conf.c</Path>
+                <Type>C File</Type>
+            </Source_File>
+        </Source_Files>
+        <Header_Files>
+            <Header_File>
+                <File_Name>cpu_ctrl_xmc4.h</File_Name>
+                <Path>\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4.h</Path>
+                <Type>H File</Type>
+            </Header_File>
+            <Header_File>
+                <File_Name>cpu_ctrl_xmc4_conf.h</File_Name>
+                <Path>\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_conf.h</Path>
+                <Type>H File</Type>
+            </Header_File>
+            <Header_File>
+                <File_Name>cpu_ctrl_xmc4_extern.h</File_Name>
+                <Path>\Dave\Generated\CPU_CTRL_XMC4\cpu_ctrl_xmc4_extern.h</Path>
+                <Type>H File</Type>
+            </Header_File>
+            <Header_File>
+                <File_Name>DAVE.h</File_Name>
+                <Path>\Dave\Generated\DAVE.h</Path>
+                <Type>H File</Type>
+            </Header_File>
+            <Header_File>
+                <File_Name>DAVE_Common.h</File_Name>
+                <Path>\Dave\Generated\DAVE_Common.h</Path>
+                <Type>H File</Type>
+            </Header_File>
+            <Header_File>
+                <File_Name>dma_ch.h</File_Name>
+                <Path>\Dave\Generated\DMA_CH\dma_ch.h</Path>
+                <Type>H File</Type>
+            </Header_File>
+            <Header_File>
+                <File_Name>dma_ch_conf.h</File_Name>
+                <Path>\Dave\Generated\DMA_CH\dma_ch_conf.h</Path>
+                <Type>H File</Type>
+            </Header_File>
+            <Header_File>
+                <File_Name>dma_ch_extern.h</File_Name>
+                <Path>\Dave\Generated\DMA_CH\dma_ch_extern.h</Path>
+                <Type>H File</Type>
+            </Header_File>
+            <Header_File>
+                <File_Name>global_dma.h</File_Name>
+                <Path>\Dave\Generated\GLOBAL_DMA\global_dma.h</Path>
+                <Type>H File</Type>
+            </Header_File>
+            <Header_File>
+                <File_Name>global_dma_conf.h</File_Name>
+                <Path>\Dave\Generated\GLOBAL_DMA\global_dma_conf.h</Path>
+                <Type>H File</Type>
+            </Header_File>
+            <Header_File>
+                <File_Name>global_dma_extern.h</File_Name>
+                <Path>\Dave\Generated\GLOBAL_DMA\global_dma_extern.h</Path>
+                <Type>H File</Type>
+            </Header_File>
+        </Header_Files>
+        <Library_Files/>
+        <Assembly_Files/>
+    </Generated_Files>
+    <Include_Path>
+        <Path>\Libraries\XMCLib\inc</Path>
+        <Path>\Libraries\CMSIS\Include</Path>
+        <Path>\Libraries\CMSIS\Infineon\XMC4800_series\Include</Path>
+        <Path/>
+        <Path>\Dave\Generated</Path>
+        <Path>\Libraries</Path>
+    </Include_Path>
+    <Preprocessor_Symbols>
+        <Assembler_Symbol>XMC4800_F100x2048=</Assembler_Symbol>
+        <Compiler_Symbol>XMC4800_F100x2048=</Compiler_Symbol>
+    </Preprocessor_Symbols>
+</Project>

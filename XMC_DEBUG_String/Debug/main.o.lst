@@ -1,0 +1,155 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "main.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .rodata
+  20              	 .align 2
+  21              	.LC0:
+  22 0000 53696D54 	 .ascii "SimTestlab\000"
+  22      6573746C 
+  22      616200
+  23 000b 00       	 .align 2
+  24              	.LC1:
+  25 000c 44415645 	 .ascii "DAVE APPs initialization failed\000"
+  25      20415050 
+  25      7320696E 
+  25      69746961 
+  25      6C697A61 
+  26              	 .align 2
+  27              	.LC2:
+  28 002c 57454C43 	 .ascii "WELCOME\000"
+  28      4F4D4500 
+  29              	 .section .text.main,"ax",%progbits
+  30              	 .align 2
+  31              	 .global main
+  32              	 .thumb
+  33              	 .thumb_func
+  35              	main:
+  36              	.LFB133:
+  37              	 .file 1 "../main.c"
+   1:../main.c     **** /*
+   2:../main.c     ****  * main.c
+   3:../main.c     ****  *
+   4:../main.c     ****  *  Created on: 2024 Aug 28 21:57:04
+   5:../main.c     ****  *  Author: admin
+   6:../main.c     ****  */
+   7:../main.c     **** 
+   8:../main.c     **** 
+   9:../main.c     **** 
+  10:../main.c     **** 
+  11:../main.c     **** #include "DAVE.h"                 //Declarations from DAVE Code Generation (includes SFR declaratio
+  12:../main.c     **** extern void initialise_monitor_handles(void);
+  13:../main.c     **** /**
+  14:../main.c     **** 
+  15:../main.c     ****  * @brief main() - Application entry point
+  16:../main.c     ****  *
+  17:../main.c     ****  * <b>Details of function</b><br>
+  18:../main.c     ****  * This routine is the application entry point. It is invoked by the device startup code. It is res
+  19:../main.c     ****  * invoking the APP initialization dispatcher routine - DAVE_Init() and hosting the place-holder fo
+  20:../main.c     ****  * code.
+  21:../main.c     ****  */
+  22:../main.c     **** 
+  23:../main.c     **** int main(void)
+  24:../main.c     **** {
+  38              	 .loc 1 24 0
+  39              	 .cfi_startproc
+  40              	 
+  41              	 
+  42 0000 80B5     	 push {r7,lr}
+  43              	.LCFI0:
+  44              	 .cfi_def_cfa_offset 8
+  45              	 .cfi_offset 7,-8
+  46              	 .cfi_offset 14,-4
+  47 0002 82B0     	 sub sp,sp,#8
+  48              	.LCFI1:
+  49              	 .cfi_def_cfa_offset 16
+  50 0004 00AF     	 add r7,sp,#0
+  51              	.LCFI2:
+  52              	 .cfi_def_cfa_register 7
+  25:../main.c     ****   DAVE_STATUS_t status;
+  26:../main.c     **** 
+  27:../main.c     ****   status = DAVE_Init();           /* Initialization of DAVE APPs  */
+  53              	 .loc 1 27 0
+  54 0006 FFF7FEFF 	 bl DAVE_Init
+  55 000a 0346     	 mov r3,r0
+  56 000c FB71     	 strb r3,[r7,#7]
+  28:../main.c     ****   initialise_monitor_handles();
+  57              	 .loc 1 28 0
+  58 000e FFF7FEFF 	 bl initialise_monitor_handles
+  29:../main.c     ****   XMC_DEBUG("SimTestlab\n")
+  59              	 .loc 1 29 0
+  60 0012 0748     	 ldr r0,.L4
+  61 0014 FFF7FEFF 	 bl puts
+  30:../main.c     ****   if (status != DAVE_STATUS_SUCCESS)
+  62              	 .loc 1 30 0
+  63 0018 FB79     	 ldrb r3,[r7,#7]
+  64 001a 002B     	 cmp r3,#0
+  65 001c 03D0     	 beq .L2
+  31:../main.c     ****   {
+  32:../main.c     ****     /* Placeholder for error handler code. The while loop below can be replaced with an user error 
+  33:../main.c     ****     XMC_DEBUG("DAVE APPs initialization failed\n");
+  66              	 .loc 1 33 0
+  67 001e 0548     	 ldr r0,.L4+4
+  68 0020 FFF7FEFF 	 bl puts
+  69              	.L3:
+  34:../main.c     **** 
+  35:../main.c     ****     while(1U)
+  36:../main.c     ****     {
+  37:../main.c     **** 
+  38:../main.c     ****     }
+  70              	 .loc 1 38 0 discriminator 1
+  71 0024 FEE7     	 b .L3
+  72              	.L2:
+  39:../main.c     ****   }
+  40:../main.c     **** 
+  41:../main.c     ****   /* Placeholder for user application code. The while loop below can be replaced with user applicat
+  42:../main.c     ****   while(1U)
+  43:../main.c     ****   {
+  44:../main.c     **** 	  XMC_DEBUG("WELCOME\n")
+  73              	 .loc 1 44 0 discriminator 1
+  74 0026 0448     	 ldr r0,.L4+8
+  75 0028 FFF7FEFF 	 bl puts
+  45:../main.c     ****   }
+  76              	 .loc 1 45 0 discriminator 1
+  77 002c FBE7     	 b .L2
+  78              	.L5:
+  79 002e 00BF     	 .align 2
+  80              	.L4:
+  81 0030 00000000 	 .word .LC0
+  82 0034 0C000000 	 .word .LC1
+  83 0038 2C000000 	 .word .LC2
+  84              	 .cfi_endproc
+  85              	.LFE133:
+  87              	 .text
+  88              	.Letext0:
+  89              	 .file 2 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+  90              	 .file 3 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+  91              	 .file 4 "C:/work_mari/XMC4800/common-tasks/XMC_DEBUG_String/Dave/Generated/DAVE.h"
+  92              	 .file 5 "C:/work_mari/XMC4800/common-tasks/XMC_DEBUG_String/Libraries/CMSIS/Include/cmsis_gcc.h"
+  93              	 .file 6 "C:/work_mari/XMC4800/common-tasks/XMC_DEBUG_String/Libraries/CMSIS/Include/core_cm4.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+    {standard input}:20     .rodata:00000000 $d
+    {standard input}:30     .text.main:00000000 $t
+    {standard input}:35     .text.main:00000000 main
+    {standard input}:81     .text.main:00000030 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+DAVE_Init
+initialise_monitor_handles
+puts

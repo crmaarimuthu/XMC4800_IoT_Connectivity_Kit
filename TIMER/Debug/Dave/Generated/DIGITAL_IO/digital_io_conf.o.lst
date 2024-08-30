@@ -1,0 +1,88 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "digital_io_conf.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .global DIGITAL_IO_2
+  20              	 .section .rodata.DIGITAL_IO_2,"a",%progbits
+  21              	 .align 2
+  24              	DIGITAL_IO_2:
+  25 0000 00840248 	 .word 1208124416
+  26 0004 80       	 .byte -128
+  27 0005 000000   	 .space 3
+  28 0008 00000100 	 .word 65536
+  29 000c 00000000 	 .space 4
+  30 0010 00       	 .byte 0
+  31 0011 00       	 .byte 0
+  32 0012 0000     	 .space 2
+  33              	 .global DIGITAL_IO_0
+  34              	 .section .rodata.DIGITAL_IO_0,"a",%progbits
+  35              	 .align 2
+  38              	DIGITAL_IO_0:
+  39 0000 00800248 	 .word 1208123392
+  40 0004 00       	 .byte 0
+  41 0005 00000000 	 .space 11
+  41      00000000 
+  41      000000
+  42 0010 01       	 .byte 1
+  43 0011 00       	 .byte 0
+  44 0012 0000     	 .space 2
+  45              	 .global DIGITAL_IO_1
+  46              	 .section .rodata.DIGITAL_IO_1,"a",%progbits
+  47              	 .align 2
+  50              	DIGITAL_IO_1:
+  51 0000 00800248 	 .word 1208123392
+  52 0004 80       	 .byte -128
+  53 0005 000000   	 .space 3
+  54 0008 00000100 	 .word 65536
+  55 000c 00000000 	 .space 4
+  56 0010 00       	 .byte 0
+  57 0011 00       	 .byte 0
+  58 0012 0000     	 .space 2
+  59              	 .global DIGITAL_IO_3
+  60              	 .section .rodata.DIGITAL_IO_3,"a",%progbits
+  61              	 .align 2
+  64              	DIGITAL_IO_3:
+  65 0000 00840248 	 .word 1208124416
+  66 0004 80       	 .byte -128
+  67 0005 000000   	 .space 3
+  68 0008 00000100 	 .word 65536
+  69 000c 00000000 	 .space 4
+  70 0010 01       	 .byte 1
+  71 0011 00       	 .byte 0
+  72 0012 0000     	 .space 2
+  73              	 .text
+  74              	.Letext0:
+  75              	 .file 1 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+  76              	 .file 2 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+  77              	 .file 3 "C:/work_mari/XMC4800/common-tasks/TIMER/Libraries/XMCLib/inc/xmc_gpio.h"
+  78              	 .file 4 "C:/work_mari/XMC4800/common-tasks/TIMER/Libraries/XMCLib/inc/xmc4_gpio.h"
+  79              	 .file 5 "../Dave/Generated/DIGITAL_IO/digital_io.h"
+  80              	 .file 6 "C:/work_mari/XMC4800/common-tasks/TIMER/Libraries/CMSIS/Include/cmsis_gcc.h"
+  81              	 .file 7 "C:/work_mari/XMC4800/common-tasks/TIMER/Libraries/CMSIS/Include/core_cm4.h"
+  82              	 .file 8 "../Dave/Generated/DIGITAL_IO/digital_io_conf.c"
+DEFINED SYMBOLS
+                            *ABS*:00000000 digital_io_conf.c
+    {standard input}:24     .rodata.DIGITAL_IO_2:00000000 DIGITAL_IO_2
+    {standard input}:21     .rodata.DIGITAL_IO_2:00000000 $d
+    {standard input}:38     .rodata.DIGITAL_IO_0:00000000 DIGITAL_IO_0
+    {standard input}:35     .rodata.DIGITAL_IO_0:00000000 $d
+    {standard input}:50     .rodata.DIGITAL_IO_1:00000000 DIGITAL_IO_1
+    {standard input}:47     .rodata.DIGITAL_IO_1:00000000 $d
+    {standard input}:64     .rodata.DIGITAL_IO_3:00000000 DIGITAL_IO_3
+    {standard input}:61     .rodata.DIGITAL_IO_3:00000000 $d
+
+NO UNDEFINED SYMBOLS

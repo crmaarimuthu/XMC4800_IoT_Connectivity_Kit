@@ -1,0 +1,219 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "main.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .comm result,2,2
+  20              	 .comm value,4,4
+  21              	 .section .text.main,"ax",%progbits
+  22              	 .align 2
+  23              	 .global main
+  24              	 .thumb
+  25              	 .thumb_func
+  27              	main:
+  28              	.LFB329:
+  29              	 .file 1 "../main.c"
+   1:../main.c     **** /*
+   2:../main.c     ****  * main.c
+   3:../main.c     ****  *
+   4:../main.c     ****  *  Created on: 2024 Aug 24 23:53:01
+   5:../main.c     ****  *  Author: admin
+   6:../main.c     ****  */
+   7:../main.c     **** 
+   8:../main.c     **** 
+   9:../main.c     **** 
+  10:../main.c     **** 
+  11:../main.c     **** #include "DAVE.h"                 //Declarations from DAVE Code Generation (includes SFR declaratio
+  12:../main.c     **** 
+  13:../main.c     **** /**
+  14:../main.c     **** 
+  15:../main.c     ****  * @brief main() - Application entry point
+  16:../main.c     ****  *
+  17:../main.c     ****  * <b>Details of function</b><br>
+  18:../main.c     ****  * This routine is the application entry point. It is invoked by the device startup code. It is res
+  19:../main.c     ****  * invoking the APP initialization dispatcher routine - DAVE_Init() and hosting the place-holder fo
+  20:../main.c     ****  * code.
+  21:../main.c     ****  */
+  22:../main.c     **** XMC_VADC_RESULT_SIZE_t result;
+  23:../main.c     **** uint32_t value;
+  24:../main.c     **** int main(void)
+  25:../main.c     **** {
+  30              	 .loc 1 25 0
+  31              	 .cfi_startproc
+  32              	 
+  33              	 
+  34 0000 80B5     	 push {r7,lr}
+  35              	.LCFI0:
+  36              	 .cfi_def_cfa_offset 8
+  37              	 .cfi_offset 7,-8
+  38              	 .cfi_offset 14,-4
+  39 0002 82B0     	 sub sp,sp,#8
+  40              	.LCFI1:
+  41              	 .cfi_def_cfa_offset 16
+  42 0004 00AF     	 add r7,sp,#0
+  43              	.LCFI2:
+  44              	 .cfi_def_cfa_register 7
+  26:../main.c     ****   DAVE_STATUS_t status;
+  27:../main.c     **** 
+  28:../main.c     ****   status = DAVE_Init();           /* Initialization of DAVE APPs  */
+  45              	 .loc 1 28 0
+  46 0006 FFF7FEFF 	 bl DAVE_Init
+  47 000a 0346     	 mov r3,r0
+  48 000c FB71     	 strb r3,[r7,#7]
+  29:../main.c     **** 
+  30:../main.c     ****   if (status != DAVE_STATUS_SUCCESS)
+  49              	 .loc 1 30 0
+  50 000e FB79     	 ldrb r3,[r7,#7]
+  51 0010 002B     	 cmp r3,#0
+  52 0012 00D0     	 beq .L2
+  53              	.L3:
+  31:../main.c     ****   {
+  32:../main.c     ****     /* Placeholder for error handler code. The while loop below can be replaced with an user error 
+  33:../main.c     ****     XMC_DEBUG("DAVE APPs initialization failed\n");
+  34:../main.c     **** 
+  35:../main.c     ****     while(1U)
+  36:../main.c     ****     {
+  37:../main.c     **** 
+  38:../main.c     ****     }
+  54              	 .loc 1 38 0 discriminator 1
+  55 0014 FEE7     	 b .L3
+  56              	.L2:
+  39:../main.c     ****   }
+  40:../main.c     **** 
+  41:../main.c     ****   /* Placeholder for user application code. The while loop below can be replaced with user applicat
+  42:../main.c     ****   while(1U)
+  43:../main.c     ****   {
+  44:../main.c     **** 
+  45:../main.c     ****   }
+  57              	 .loc 1 45 0 discriminator 2
+  58 0016 FEE7     	 b .L2
+  59              	 .cfi_endproc
+  60              	.LFE329:
+  62              	 .global __aeabi_i2d
+  63              	 .global __aeabi_ddiv
+  64              	 .global __aeabi_d2uiz
+  65              	 .section .text.VADC0_C0_2_IRQHandler,"ax",%progbits
+  66              	 .align 2
+  67              	 .global VADC0_C0_2_IRQHandler
+  68              	 .thumb
+  69              	 .thumb_func
+  71              	VADC0_C0_2_IRQHandler:
+  72              	.LFB330:
+  46:../main.c     **** }
+  47:../main.c     **** void Adc_Measurement_Handler(void)
+  48:../main.c     **** {
+  73              	 .loc 1 48 0
+  74              	 .cfi_startproc
+  75              	 
+  76              	 
+  77 0000 80B5     	 push {r7,lr}
+  78              	.LCFI3:
+  79              	 .cfi_def_cfa_offset 8
+  80              	 .cfi_offset 7,-8
+  81              	 .cfi_offset 14,-4
+  82 0002 00AF     	 add r7,sp,#0
+  83              	.LCFI4:
+  84              	 .cfi_def_cfa_register 7
+  49:../main.c     **** 	result = ADC_MEASUREMENT_GetResult(&ADC_MEASUREMENT_Channel_A);
+  85              	 .loc 1 49 0
+  86 0004 1448     	 ldr r0,.L5+8
+  87 0006 FFF7FEFF 	 bl ADC_MEASUREMENT_GetResult
+  88 000a 0346     	 mov r3,r0
+  89 000c 1A46     	 mov r2,r3
+  90 000e 134B     	 ldr r3,.L5+12
+  91 0010 1A80     	 strh r2,[r3]
+  50:../main.c     **** 
+  51:../main.c     **** 	value =result / 0.4095;
+  92              	 .loc 1 51 0
+  93 0012 124B     	 ldr r3,.L5+12
+  94 0014 1B88     	 ldrh r3,[r3]
+  95 0016 1846     	 mov r0,r3
+  96 0018 FFF7FEFF 	 bl __aeabi_i2d
+  97 001c 0246     	 mov r2,r0
+  98 001e 0B46     	 mov r3,r1
+  99 0020 1046     	 mov r0,r2
+ 100 0022 1946     	 mov r1,r3
+ 101 0024 0AA3     	 adr r3,.L5
+ 102 0026 D3E90023 	 ldrd r2,[r3]
+ 103 002a FFF7FEFF 	 bl __aeabi_ddiv
+ 104 002e 0246     	 mov r2,r0
+ 105 0030 0B46     	 mov r3,r1
+ 106 0032 1046     	 mov r0,r2
+ 107 0034 1946     	 mov r1,r3
+ 108 0036 FFF7FEFF 	 bl __aeabi_d2uiz
+ 109 003a 0246     	 mov r2,r0
+ 110 003c 084B     	 ldr r3,.L5+16
+ 111 003e 1A60     	 str r2,[r3]
+  52:../main.c     **** 	PWM_SetDutyCycle(&PWM_0,value);
+ 112              	 .loc 1 52 0
+ 113 0040 074B     	 ldr r3,.L5+16
+ 114 0042 1B68     	 ldr r3,[r3]
+ 115 0044 0748     	 ldr r0,.L5+20
+ 116 0046 1946     	 mov r1,r3
+ 117 0048 FFF7FEFF 	 bl PWM_SetDutyCycle
+  53:../main.c     **** }
+ 118              	 .loc 1 53 0
+ 119 004c 80BD     	 pop {r7,pc}
+ 120              	.L6:
+ 121 004e 00BF     	 .align 3
+ 122              	.L5:
+ 123 0050 6891ED7C 	 .word 2095944040
+ 124 0054 3F35DA3F 	 .word 1071265087
+ 125 0058 00000000 	 .word ADC_MEASUREMENT_Channel_A_handle
+ 126 005c 00000000 	 .word result
+ 127 0060 00000000 	 .word value
+ 128 0064 00000000 	 .word PWM_0
+ 129              	 .cfi_endproc
+ 130              	.LFE330:
+ 132              	 .text
+ 133              	.Letext0:
+ 134              	 .file 2 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+ 135              	 .file 3 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+ 136              	 .file 4 "C:/work_mari/XMC4800/pwm_adc/Libraries/CMSIS/Infineon/XMC4800_series/Include/XMC4800.h"
+ 137              	 .file 5 "C:/work_mari/XMC4800/pwm_adc/Libraries/XMCLib/inc/xmc4_scu.h"
+ 138              	 .file 6 "C:/work_mari/XMC4800/pwm_adc/Libraries/XMCLib/inc/xmc_gpio.h"
+ 139              	 .file 7 "C:/work_mari/XMC4800/pwm_adc/Libraries/XMCLib/inc/xmc4_gpio.h"
+ 140              	 .file 8 "C:/work_mari/XMC4800/pwm_adc/Libraries/XMCLib/inc/xmc_ccu8.h"
+ 141              	 .file 9 "C:/work_mari/XMC4800/pwm_adc/Dave/Generated/GLOBAL_CCU8/global_ccu8.h"
+ 142              	 .file 10 "C:/work_mari/XMC4800/pwm_adc/Dave/Generated/PWM/pwm.h"
+ 143              	 .file 11 "C:/work_mari/XMC4800/pwm_adc/Libraries/XMCLib/inc/xmc_vadc.h"
+ 144              	 .file 12 "C:/work_mari/XMC4800/pwm_adc/Dave/Generated/ADC_MEASUREMENT/adc_measurement.h"
+ 145              	 .file 13 "C:/work_mari/XMC4800/pwm_adc/Dave/Generated/DAVE.h"
+ 146              	 .file 14 "C:/work_mari/XMC4800/pwm_adc/Libraries/CMSIS/Include/cmsis_gcc.h"
+ 147              	 .file 15 "C:/work_mari/XMC4800/pwm_adc/Libraries/CMSIS/Include/core_cm4.h"
+ 148              	 .file 16 "C:/work_mari/XMC4800/pwm_adc/Libraries/CMSIS/Infineon/XMC4800_series/Include/system_XMC4800.h"
+ 149              	 .file 17 "C:/work_mari/XMC4800/pwm_adc/Dave/Generated/PWM/PWM_Extern.h"
+ 150              	 .file 18 "C:/work_mari/XMC4800/pwm_adc/Dave/Generated/ADC_MEASUREMENT/adc_measurement_extern.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+                            *COM*:00000002 result
+                            *COM*:00000004 value
+    {standard input}:22     .text.main:00000000 $t
+    {standard input}:27     .text.main:00000000 main
+    {standard input}:66     .text.VADC0_C0_2_IRQHandler:00000000 $t
+    {standard input}:71     .text.VADC0_C0_2_IRQHandler:00000000 VADC0_C0_2_IRQHandler
+    {standard input}:123    .text.VADC0_C0_2_IRQHandler:00000050 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+DAVE_Init
+__aeabi_i2d
+__aeabi_ddiv
+__aeabi_d2uiz
+ADC_MEASUREMENT_GetResult
+PWM_SetDutyCycle
+ADC_MEASUREMENT_Channel_A_handle
+PWM_0

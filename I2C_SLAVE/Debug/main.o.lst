@@ -1,0 +1,143 @@
+   1              	 .syntax unified
+   2              	 .cpu cortex-m4
+   3              	 .eabi_attribute 27,3
+   4              	 .fpu fpv4-sp-d16
+   5              	 .eabi_attribute 20,1
+   6              	 .eabi_attribute 21,1
+   7              	 .eabi_attribute 23,3
+   8              	 .eabi_attribute 24,1
+   9              	 .eabi_attribute 25,1
+  10              	 .eabi_attribute 26,1
+  11              	 .eabi_attribute 30,6
+  12              	 .eabi_attribute 34,1
+  13              	 .eabi_attribute 18,4
+  14              	 .thumb
+  15              	 .file "main.c"
+  16              	 .text
+  17              	.Ltext0:
+  18              	 .cfi_sections .debug_frame
+  19              	 .section .text.main,"ax",%progbits
+  20              	 .align 2
+  21              	 .global main
+  22              	 .thumb
+  23              	 .thumb_func
+  25              	main:
+  26              	.LFB288:
+  27              	 .file 1 "../main.c"
+   1:../main.c     ****     #include "DAVE.h"         //Declarations from DAVE Code Generation (includes SFR declaration)
+   2:../main.c     **** 
+   3:../main.c     ****     //Pre-condition:
+   4:../main.c     ****     //Configure receive mode and transmit mode as "Direct".
+   5:../main.c     ****     //Description:
+   6:../main.c     ****     //Receives 10 bytes from the I2C master and transmits the same to the master.
+   7:../main.c     ****     //Data will be transmitted or received only when master provides the clock, read request and wr
+   8:../main.c     **** 
+   9:../main.c     ****     int main(void)
+  10:../main.c     ****     {
+  28              	 .loc 1 10 0
+  29              	 .cfi_startproc
+  30              	 
+  31              	 
+  32 0000 80B5     	 push {r7,lr}
+  33              	.LCFI0:
+  34              	 .cfi_def_cfa_offset 8
+  35              	 .cfi_offset 7,-8
+  36              	 .cfi_offset 14,-4
+  37 0002 84B0     	 sub sp,sp,#16
+  38              	.LCFI1:
+  39              	 .cfi_def_cfa_offset 24
+  40 0004 00AF     	 add r7,sp,#0
+  41              	.LCFI2:
+  42              	 .cfi_def_cfa_register 7
+  11:../main.c     ****       I2C_SLAVE_STATUS_t init_status;
+  12:../main.c     ****       uint8_t ReadData[10];
+  13:../main.c     **** 
+  14:../main.c     ****       init_status = (I2C_SLAVE_STATUS_t)I2C_SLAVE_Init(&I2C_SLAVE_0);
+  43              	 .loc 1 14 0
+  44 0006 0F48     	 ldr r0,.L6
+  45 0008 FFF7FEFF 	 bl I2C_SLAVE_Init
+  46 000c 0346     	 mov r3,r0
+  47 000e FB73     	 strb r3,[r7,#15]
+  15:../main.c     ****       if(init_status == I2C_SLAVE_STATUS_SUCCESS)
+  48              	 .loc 1 15 0
+  49 0010 FB7B     	 ldrb r3,[r7,#15]
+  50 0012 002B     	 cmp r3,#0
+  51 0014 0FD1     	 bne .L2
+  16:../main.c     ****       {
+  17:../main.c     ****         //Start data reception and wait till 10 bytes are received.
+  18:../main.c     ****         if(I2C_SLAVE_Receive(&I2C_SLAVE_0, ReadData, 10) == I2C_SLAVE_STATUS_SUCCESS)
+  52              	 .loc 1 18 0
+  53 0016 3B1D     	 adds r3,r7,#4
+  54 0018 0A48     	 ldr r0,.L6
+  55 001a 1946     	 mov r1,r3
+  56 001c 0A22     	 movs r2,#10
+  57 001e FFF7FEFF 	 bl I2C_SLAVE_Receive
+  58 0022 0346     	 mov r3,r0
+  59 0024 002B     	 cmp r3,#0
+  60 0026 07D1     	 bne .L4
+  19:../main.c     ****         {
+  20:../main.c     ****           //Transmit the received data to master.
+  21:../main.c     ****           I2C_SLAVE_Transmit(&I2C_SLAVE_0, ReadData, 10);
+  61              	 .loc 1 21 0
+  62 0028 3B1D     	 adds r3,r7,#4
+  63 002a 0648     	 ldr r0,.L6
+  64 002c 1946     	 mov r1,r3
+  65 002e 0A22     	 movs r2,#10
+  66 0030 FFF7FEFF 	 bl I2C_SLAVE_Transmit
+  67 0034 00E0     	 b .L4
+  68              	.L2:
+  22:../main.c     ****         }
+  23:../main.c     ****       }
+  24:../main.c     ****       else
+  25:../main.c     ****       {
+  26:../main.c     ****        XMC_DEBUG("main: Application initialization failed");
+  27:../main.c     ****        while(1U)
+  28:../main.c     ****        {
+  29:../main.c     ****        }
+  69              	 .loc 1 29 0 discriminator 1
+  70 0036 FEE7     	 b .L2
+  71              	.L4:
+  30:../main.c     ****       }
+  31:../main.c     ****        return 1U;
+  72              	 .loc 1 31 0
+  73 0038 0123     	 movs r3,#1
+  32:../main.c     ****    }
+  74              	 .loc 1 32 0
+  75 003a 1846     	 mov r0,r3
+  76 003c 1037     	 adds r7,r7,#16
+  77              	.LCFI3:
+  78              	 .cfi_def_cfa_offset 8
+  79 003e BD46     	 mov sp,r7
+  80              	.LCFI4:
+  81              	 .cfi_def_cfa_register 13
+  82              	 
+  83 0040 80BD     	 pop {r7,pc}
+  84              	.L7:
+  85 0042 00BF     	 .align 2
+  86              	.L6:
+  87 0044 00000000 	 .word I2C_SLAVE_0
+  88              	 .cfi_endproc
+  89              	.LFE288:
+  91              	 .text
+  92              	.Letext0:
+  93              	 .file 2 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\machine\\_default_types.h"
+  94              	 .file 3 "c:\\infineon\\tools\\dave ide\\4.5.0.202105191637\\eclipse\\arm-gcc-49\\arm-none-eabi\\include\\stdint.h"
+  95              	 .file 4 "C:/work_mari/XMC4800/common-tasks/I2C_SLAVE/Libraries/XMCLib/inc/xmc_usic.h"
+  96              	 .file 5 "C:/work_mari/XMC4800/common-tasks/I2C_SLAVE/Libraries/XMCLib/inc/xmc_i2c.h"
+  97              	 .file 6 "C:/work_mari/XMC4800/common-tasks/I2C_SLAVE/Dave/Generated/I2C_SLAVE/i2c_slave.h"
+  98              	 .file 7 "C:/work_mari/XMC4800/common-tasks/I2C_SLAVE/Libraries/CMSIS/Include/cmsis_gcc.h"
+  99              	 .file 8 "C:/work_mari/XMC4800/common-tasks/I2C_SLAVE/Libraries/CMSIS/Include/core_cm4.h"
+ 100              	 .file 9 "C:/work_mari/XMC4800/common-tasks/I2C_SLAVE/Libraries/CMSIS/Infineon/XMC4800_series/Include/system_XMC4800.h"
+ 101              	 .file 10 "C:/work_mari/XMC4800/common-tasks/I2C_SLAVE/Dave/Generated/I2C_SLAVE/i2c_slave_extern.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+    {standard input}:20     .text.main:00000000 $t
+    {standard input}:25     .text.main:00000000 main
+    {standard input}:87     .text.main:00000044 $d
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+I2C_SLAVE_Init
+I2C_SLAVE_Receive
+I2C_SLAVE_Transmit
+I2C_SLAVE_0
